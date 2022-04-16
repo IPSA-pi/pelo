@@ -11,11 +11,11 @@ function draw() {
     let t = 0;
     beginShape();
     for (let a = 0; a < TWO_PI; a += 0.1) {
-        let r = noise(t) * 100;
+        let r = map(noise(t),0,1,100,200); 
         let x = r * cos(a);
         let y = r * sin(a);
         vertex(x,y);
-        t += .01;
+        t += .1;
     }
     endShape();
     noLoop();
